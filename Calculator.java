@@ -21,7 +21,8 @@ public class Calculator {
             }
 
             System.out.print("기호 입력: ");
-            String sign = scanner.nextLine();
+            String signinput = scanner.nextLine();
+            char sign = signinput.charAt(0);
 
             System.out.print("숫자 입력: ");
             int num2 = scanner.nextInt();
@@ -34,19 +35,19 @@ public class Calculator {
 
             switch (sign)
             {
-                case "+":
+                case '+':
                     int sum = num1 + num2;
                     System.out.println("결과: " + sum);
                     break;
-                case "-":
+                case '-':
                     int min = num1 - num2;
                     System.out.println("결과: " + min);
                     break;
-                case "*":
+                case '*':
                     int mul = num1 * num2;
                     System.out.println("결과: " + mul);
                     break;
-                case "%":
+                case '%':
                     if(num1 == 0 && num2 == 0)
                     {
                         System.out.println("0은 연산할 수 없습니다.");
