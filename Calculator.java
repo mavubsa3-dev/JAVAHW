@@ -6,7 +6,7 @@ public class Calculator {
 
     private List<Calculate> list = new ArrayList<>();
 
-    public void estimate(int num1, int num2, char sign)
+    public void estimate(String num1, String num2, char sign)
     {
         Calculate calc = new Calculate(num1, num2, sign);
         ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();

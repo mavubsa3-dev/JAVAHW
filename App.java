@@ -8,32 +8,20 @@ public class App {
         while(true)
         {
             System.out.print("숫자 입력: ");
-            String input = scanner.nextLine();
-            if(input.equals("exit"))
+            String num1 = scanner.nextLine();
+            if(num1.equals("exit"))
             {
                 System.out.println("프로그램을 종료합니다.");
                 break;
             }
 
-            int num1 = Integer.parseInt(input);
-            if(num1 < 0)
-            {
-                System.out.println("음수는 입력할 수 없습니다. 다시 입력하세요.");
-                continue;
-            }
 
             System.out.print("기호 입력: ");
             String signinput = scanner.nextLine();
             char sign = signinput.charAt(0);
 
             System.out.print("숫자 입력: ");
-            int num2 = scanner.nextInt();
-            scanner.nextLine();
-            if(num2 < 0)
-            {
-                System.out.println("음수는 입력할 수 없습니다. 다시 입력하세요.");
-                continue;
-            }
+            String num2 = scanner.nextLine();
             calc.estimate(num1, num2, sign);
         }
         try{

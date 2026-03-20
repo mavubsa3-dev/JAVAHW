@@ -1,4 +1,4 @@
-public class ArithmeticCalculator {
+public class ArithmeticCalculator<T> {
 
     public int calculate(int num1, int num2, char sign)
     {
