@@ -1,5 +1,6 @@
 public class ArithmeticCalculator {
 
+    //enum 생성
     public enum OperatorType {
         SUM('+'),
         MIN('-'),
@@ -8,10 +9,12 @@ public class ArithmeticCalculator {
 
         private final char sign;
 
+        //생성자
         OperatorType(char sign) {
             this.sign = sign;
         }
 
+        //getter 생성
         public char getSign() {
             return sign;
         }
@@ -19,17 +22,15 @@ public class ArithmeticCalculator {
 
     public int calculate(int num1, int num2, char sign)
     {
-        OperatorType[] types = {OperatorType.SUM, OperatorType.MIN, OperatorType.MUL, OperatorType.DIV};
         char mathtype = '\u0000';
         int result = 0;
-        for(int i=0; i<OperatorType.values().length; i++)
+        for(OperatorType type : OperatorType.values()) // values()를 통해 OperateType이 가진 모든 값들 type에 담음
+        {
+            if(type.getSign() == sign)
             {
-                char type = types[i].getSign();
-                if (type == sign)
-                {
-                    mathtype = sign;
-                }
+                mathtype = sign;
             }
+        }
         switch (mathtype)
         {
             case '+':
