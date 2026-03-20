@@ -1,6 +1,5 @@
 public class ArithmeticCalculator {
 
-
     public int calculate(int num1, int num2, char sign)
     {
 
@@ -23,6 +22,6 @@ public class ArithmeticCalculator {
             case DIV:
                 return  num1 % num2;
         }
-
+        return 0;
     }
 }

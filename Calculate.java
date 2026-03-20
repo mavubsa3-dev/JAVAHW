@@ -16,7 +16,7 @@ public class Calculate <T>{
         return this.result;
     }
 
-    public T setResult(T result)
+    public void setResult(T result)
     {
         this.result = result;
     }
