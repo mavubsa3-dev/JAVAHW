@@ -17,7 +17,7 @@ public class ArithmeticCalculator {
         }
     }
 
-    public int Calculate(int num1, int num2, char sign)
+    public int calculate(int num1, int num2, char sign)
     {
         OperatorType[] types = {OperatorType.SUM, OperatorType.MIN, OperatorType.MUL, OperatorType.DIV};
         char mathtype = '\u0000';
