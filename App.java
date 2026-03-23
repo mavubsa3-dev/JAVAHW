@@ -88,6 +88,10 @@ public class App {
                     break;
 
                 case 4:
+                    if (calc == null) {
+                        System.out.println("실행한 연산이 없습니다.");
+                        break;
+                    }
                     System.out.print("정수를 입력하세요: ");
                     Number comparenum = scanner.nextInt();
                     scanner.nextLine();
