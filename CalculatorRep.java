@@ -8,4 +8,9 @@ public class CalculatorRep{
     {
         list.add(resultlist);
     }
+
+    public List<ArithmeticCalculator<?>> getList()
+    {
+        return this.list;
+    }
 }

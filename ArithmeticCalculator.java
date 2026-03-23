@@ -64,8 +64,10 @@ public class ArithmeticCalculator<T extends Number> {
                     {
                         result = (T) Integer.valueOf(num1.intValue() % num2.intValue());
                     }
+                }else
+                {
+                    throw new ArithmeticException("0으로 나눌 수 없습니다.");
                 }
-                throw new ArithmeticException("0으로 나눌 수 없습니다.");
         }
         return result;
     }

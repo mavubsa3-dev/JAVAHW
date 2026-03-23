@@ -48,8 +48,12 @@ public class App {
             }
             ArithmeticCalculator<Number> calc = new ArithmeticCalculator<>(num1, num2, sign);
             rep.add(calc);
-            result = calc.getResult();
+            result = calc.calculate();
             System.out.println("연산 결과: " + result);
+        }
+        for(int i=0; i<rep.getList().size(); i++)
+        {
+            System.out.println((i + 1) + "번 연산 결과: " + rep.getList().get(i).getResult());
         }
     }
 }
