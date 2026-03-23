@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Calculator {
 
-    private List<Calculate> list = new ArrayList<>();
+    private List<Calculate<?>> list = new ArrayList<>();
 
     public void estimate(String num1, String num2, char sign)
     {
@@ -18,7 +18,7 @@ public class Calculator {
 
 
 
-    public List<Calculate> getList()
+    public List<Calculate<?>> getList()
     {
         return list;
     }

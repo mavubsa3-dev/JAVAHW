@@ -22,10 +22,16 @@ public class App {
 
             System.out.print("숫자 입력: ");
             String num2 = scanner.nextLine();
+            if(num2.equals("exit"))
+            {
+                System.out.println("프로그램을 종료합니다.");
+                break;
+            }
             calc.estimate(num1, num2, sign);
+
         }
         try{
-            List<Calculate> resultlList = calc.getList();
+            List<Calculate<?>> resultlList = calc.getList();
             for(int i=0; i< resultlList.size(); i++)
             {
                 System.out.println((i + 1) + " 번 계산 결과: " + resultlList.get(i).getResult());

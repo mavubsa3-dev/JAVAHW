@@ -1,6 +1,6 @@
-public class ArithmeticCalculator<T> {
+public class ArithmeticCalculator<T extends Number> {
 
-    public int calculate(int num1, int num2, char sign)
+    public int calculate(T num1, T num2, char sign)
     {
 
         OperatorType types = OperatorType.from(sign);
