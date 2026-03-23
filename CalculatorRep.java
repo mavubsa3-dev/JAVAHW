@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CalculatorRep{
-    List<ArithmeticCalculator<?>> list = new ArrayList<>();
+     private List<ArithmeticCalculator<?>> list = new ArrayList<>();
 
     public void add(ArithmeticCalculator<?> resultlist)
     {
