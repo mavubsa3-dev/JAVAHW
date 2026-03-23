@@ -5,14 +5,24 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Calculator calc = new Calculator();
+        Number num1 = null;
+        Number num2 = null;
         while(true)
         {
             System.out.print("숫자 입력: ");
-            String num1 = scanner.nextLine();
-            if(num1.equals("exit"))
+            String input1 = scanner.nextLine();
+            if(input1.equals("exit"))
             {
                 System.out.println("프로그램을 종료합니다.");
                 break;
+            }
+            if(input1.contains("."))
+            {
+                num1 = Double.parseDouble(input1);
+            }
+            else
+            {
+                num1 = Integer.parseInt(input1);
             }
 
 
@@ -21,11 +31,19 @@ public class App {
             char sign = signinput.charAt(0);
 
             System.out.print("숫자 입력: ");
-            String num2 = scanner.nextLine();
-            if(num2.equals("exit"))
+            String input2 = scanner.nextLine();
+            if(input2.equals("exit"))
             {
                 System.out.println("프로그램을 종료합니다.");
                 break;
+            }
+            if(input2.contains("."))
+            {
+                num2 = Double.parseDouble(input2);
+            }
+            else
+            {
+                num2 = Integer.parseInt(input2);
             }
             calc.estimate(num1, num2, sign);
 
