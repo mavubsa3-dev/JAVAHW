@@ -13,4 +13,9 @@ public class CalculatorRep{
     {
         return this.list;
     }
+
+    public void removeFirstIndex()
+    {
+        list.remove(0);
+    }
 }

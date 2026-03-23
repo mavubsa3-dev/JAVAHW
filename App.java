@@ -55,5 +55,10 @@ public class App {
         {
             System.out.println((i + 1) + "번 연산 결과: " + rep.getList().get(i).getResult());
         }
+        rep.removeFirstIndex();
+        for(int i=0; i<rep.getList().size(); i++)
+        {
+            System.out.println((i + 1) + "번 연산 결과: " + rep.getList().get(i).getResult());
+        }
     }
 }
