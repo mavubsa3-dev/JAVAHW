@@ -1,23 +1,11 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class CalculatorRep<T>{
-    private T num1;
-    private T num2;
-    private char sign;
-    private T result;
+    List<ArithmeticCalculator<?>> list = new ArrayList<>();
 
-    public CalculatorRep(T num1, T num2, char sign)
+    public void add(ArithmeticCalculator<?> resultlist)
     {
-        this.num1 = num1;
-        this.num2 = num2;
-        this.sign = sign;
-    }
-
-    public T getResult()
-    {
-        return this.result;
-    }
-
-    public void setResult(T result)
-    {
-        this.result = result;
+        list.add(resultlist);
     }
 }
