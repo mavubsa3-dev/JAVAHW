@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Calculator calc = new Calculator();
         Number num1 = null;
         Number num2 = null;
         while(true)
@@ -45,11 +44,11 @@ public class App {
             {
                 num2 = Integer.parseInt(input2);
             }
-            calc.estimate(num1, num2, sign);
+            ArithmeticCalculator<Number> calc = new ArithmeticCalculator<>(num1, num2, sign);
 
         }
         try{
-            List<Calculate<?>> resultlList = calc.getList();
+            List<CalculatorRep<?>> resultlList = calc.getList();
             for(int i=0; i< resultlList.size(); i++)
             {
                 System.out.println((i + 1) + " 번 계산 결과: " + resultlList.get(i).getResult());
