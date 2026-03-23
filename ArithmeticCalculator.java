@@ -18,20 +18,55 @@ public class ArithmeticCalculator<T extends Number> {
         switch (types)
         {
             case SUM:
-                return num1 + num2;
+                if(num1 instanceof Double || num2 instanceof Double)
+                {
+                    result = (T) Double.valueOf(num1.doubleValue() + num2.doubleValue());
+                }
+                else
+                {
+                    result = (T) Integer.valueOf(num1.intValue() + num2.intValue());
+                }
+                break;
 
 
             case SUB:
-                return num1 - num2;
+                if(num1 instanceof Double || num2 instanceof Double)
+                {
+                    result = (T) Double.valueOf(num1.doubleValue() - num2.doubleValue());
+                }
+                else
+                {
+                    result = (T) Integer.valueOf(num1.intValue() - num2.intValue());
+                }
+                break;
 
 
             case MUL:
-                return  num1 * num2;
+                if(num1 instanceof Double || num2 instanceof Double)
+                {
+                    result = (T) Double.valueOf(num1.doubleValue() * num2.doubleValue());
+                }
+                else
+                {
+                    result = (T) Integer.valueOf(num1.intValue() * num2.intValue());
+                }
+                break;
 
 
             case DIV:
-                return  num1 % num2;
+                if(num2.doubleValue() != 0)
+                {
+                    if(num1 instanceof Double || num2 instanceof Double)
+                    {
+                        result = (T) Double.valueOf(num1.doubleValue() % num2.doubleValue());
+                    }
+                    else
+                    {
+                        result = (T) Integer.valueOf(num1.intValue() % num2.intValue());
+                    }
+                }
+                throw new ArithmeticException("0으로 나눌 수 없습니다.");
         }
-        return 0;
+        return result;
     }
 }
