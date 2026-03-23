@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class ArithmeticCalculator<T extends Number> {
     private T num1;
@@ -71,6 +73,9 @@ public class ArithmeticCalculator<T extends Number> {
                 {
                     throw new ArithmeticException("0으로 나눌 수 없습니다.");
                 }
+
+            default:
+                throw new IllegalArgumentException("지원하지 않는 기호입니다.");
         }
         return result;
     }
@@ -80,6 +85,7 @@ public class ArithmeticCalculator<T extends Number> {
         return result;
     }
 
+    //람다식
      BigIndex index = (result, list) ->
      {
          List<ArithmeticCalculator<?>> newlist = new ArrayList<>();
@@ -93,8 +99,20 @@ public class ArithmeticCalculator<T extends Number> {
          return newlist;
      };
 
-    public List<ArithmeticCalculator<?>> getNewlist(List<ArithmeticCalculator<?>> list)
+    public List<ArithmeticCalculator<?>> getNewlist(Number targetNumber ,List<ArithmeticCalculator<?>> list)
     {
-        return index.bigger(result, list);
+        return index.bigger(targetNumber, list);
+    }
+
+    public List<ArithmeticCalculator<?>> getlistStream(Number targetNumber, List<ArithmeticCalculator<?>> list)
+    {
+        Predicate<ArithmeticCalculator<?>> compareIndex = (newlist) ->
+        {
+            return newlist.getResult().doubleValue() > targetNumber.doubleValue();
+        };
+
+        //스트림
+        List<ArithmeticCalculator<?>> returnlist = list.stream().filter(compareIndex).collect(Collectors.toList());
+        return returnlist;
     }
 }
