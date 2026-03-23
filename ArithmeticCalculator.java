@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ArithmeticCalculator<T extends Number> {
     private T num1;
     private T num2;
@@ -75,5 +78,23 @@ public class ArithmeticCalculator<T extends Number> {
     public Number getResult()
     {
         return result;
+    }
+
+     BigIndex index = (result, list) ->
+     {
+         List<ArithmeticCalculator<?>> newlist = new ArrayList<>();
+         for(int i=0; i<list.size(); i++)
+         {
+             if(list.get(i).getResult().doubleValue() > result.doubleValue())
+             {
+                 newlist.add(list.get(i));
+             }
+         }
+         return newlist;
+     };
+
+    public List<ArithmeticCalculator<?>> getNewlist(List<ArithmeticCalculator<?>> list)
+    {
+        return index.bigger(result, list);
     }
 }
