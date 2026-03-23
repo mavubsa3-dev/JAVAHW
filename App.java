@@ -4,8 +4,10 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Number num1 = null;
-        Number num2 = null;
+        CalculatorRep rep = new CalculatorRep();
+        Number num1 = 0;
+        Number num2 = 0;
+        Number result = 0;
         while(true)
         {
             System.out.print("숫자 입력: ");
@@ -45,17 +47,9 @@ public class App {
                 num2 = Integer.parseInt(input2);
             }
             ArithmeticCalculator<Number> calc = new ArithmeticCalculator<>(num1, num2, sign);
-
-        }
-        try{
-            List<CalculatorRep<?>> resultlList = calc.getList();
-            for(int i=0; i< resultlList.size(); i++)
-            {
-                System.out.println((i + 1) + " 번 계산 결과: " + resultlList.get(i).getResult());
-            }
-        } catch (IndexOutOfBoundsException e)
-        {
-            System.out.println("계산 기록이 없습니다.");
+            rep.add(calc);
+            result = calc.getResult();
+            System.out.println("연산 결과: " + result);
         }
     }
 }

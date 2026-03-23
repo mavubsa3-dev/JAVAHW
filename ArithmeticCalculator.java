@@ -2,6 +2,7 @@ public class ArithmeticCalculator<T extends Number> {
     private T num1;
     private T num2;
     private char sign;
+    private Number result;
 
     public ArithmeticCalculator(T num1, T num2, char sign)
     {
@@ -14,7 +15,6 @@ public class ArithmeticCalculator<T extends Number> {
     {
 
         OperatorType types = OperatorType.from(sign);
-        Number result = 0;
         switch (types)
         {
             case SUM:
@@ -67,6 +67,11 @@ public class ArithmeticCalculator<T extends Number> {
                 }
                 throw new ArithmeticException("0으로 나눌 수 없습니다.");
         }
+        return result;
+    }
+
+    public Number getResult()
+    {
         return result;
     }
 }

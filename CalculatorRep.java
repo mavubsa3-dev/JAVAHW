@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalculatorRep<T>{
+public class CalculatorRep{
     List<ArithmeticCalculator<?>> list = new ArrayList<>();
 
     public void add(ArithmeticCalculator<?> resultlist)
