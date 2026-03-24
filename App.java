@@ -110,6 +110,10 @@ public class App {
                         System.out.println();
                     }
                     break;
+
+                default:
+                    System.out.println("지원하지 않는 기호입니다.");
+
             }
         }
 
